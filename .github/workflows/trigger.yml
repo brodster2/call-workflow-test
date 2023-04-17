@@ -21,4 +21,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: All done
-        run: echo "all done saying goodbye"
+        run: echo "all done saying hello"
+
+  SayHello2:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        name: ["James", "Max"]
+    steps:
+      - name: "Say hello 2"
+        run: echo "Hello ${{ matrix.name }}"
