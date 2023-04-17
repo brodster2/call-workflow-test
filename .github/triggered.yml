@@ -1,0 +1,17 @@
+on:
+  workflow_run:
+    workflows: [trigger]
+    types: [completed]
+
+concurrency: ${{ github.ref }}
+  
+jobs:
+  finished:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Finished
+        if: github.ref == 'refs/heads/master'
+        run: echo "Trigger job finished"
+      - name: PR
+        if: github.ref != 'refs/heads/master'
+        run: echo "Trigger job run for PR"
