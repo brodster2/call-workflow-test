@@ -1,3 +1,4 @@
+name: triggered
 on:
   workflow_run:
     workflows: [trigger]
