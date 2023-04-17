@@ -16,3 +16,9 @@ jobs:
     steps:
       - name: "Say hello"
         run: echo "Hello ${{ matrix.name }}"
+
+  Finished:
+    runs-on: ubuntu-latest
+    steps:
+      - name: All done
+        run: echo "all done saying goodbye"
